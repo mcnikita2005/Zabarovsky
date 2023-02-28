@@ -1,0 +1,10 @@
+num = int(input("Please enter a three-digit number: "))
+
+num_str = str(num)
+
+rev_str = num_str[::-1]
+
+if num_str == rev_str:
+    print(f"{num} is a palindrome!")
+else:
+    print(f"{num} is not a palindrome.")
