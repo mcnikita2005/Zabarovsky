@@ -1,0 +1,10 @@
+a = float(input("Введите длину ребра a: "))
+b = float(input("Введите длину ребра b: "))
+c = float(input("Введите длину ребра c: "))
+
+surface_area = 2 * (a * b + b * c + a * c)
+
+volume = a * b * c
+
+print(f"Площадь поверхности параллелепипеда: {surface_area:.2f}")
+print(f"Объем параллелепипеда: {volume:.2f}")
