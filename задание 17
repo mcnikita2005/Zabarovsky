@@ -1,0 +1,10 @@
+distance = 10 
+total_distance = distance
+day = 1
+
+while total_distance < 100:
+    day += 1
+    distance *= 1.1
+    total_distance += distance
+
+print("Суммарный пробег за все дни превысит 100 км на", day, "день")
