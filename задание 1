@@ -1,0 +1,7 @@
+import random
+number = random.randint(10, 99)
+digit1 = number // 10
+digit2 = number % 10
+new_number = digit2 * 10 + digit1
+print("Исходное число:", number)
+print("Новое число:", new_number)
