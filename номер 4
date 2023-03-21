@@ -1,0 +1,9 @@
+centimeters = 190
+decimeters = 19
+millimeters = 1900
+meters_from_cm = centimeters / 100
+meters_from_dm = decimeters / 10
+meters_from_mm = millimeters / 1000
+print("Количество метров из", centimeters, "сантиметров:", meters_from_cm)
+print("Количество метров из", decimeters, "дециметров:", meters_from_dm)
+print("Количество метров из", millimeters, "миллиметров:", meters_from_mm)
