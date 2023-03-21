@@ -1,0 +1,5 @@
+number = 23
+tens = number // 10
+ones = number % 10
+print("Число десятков:", tens)
+print("Число единиц:", ones)
