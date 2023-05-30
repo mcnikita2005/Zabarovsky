@@ -1,0 +1,28 @@
+Задание 1 
+
+def is_year_leap(year):
+    if year % 4 != 0:
+        return 'Год не високосный'
+    elif year % 100 != 0:
+        return 'Год високосный'
+    elif year % 400 != 0:
+        return 'Год не високосный'
+    else:
+        return 'Год високосный'
+        
+   дз
+   1  def funcl(num):
+    result = num * 5
+    print(result)
+2. def funcl(num):
+    result = num * 5
+    print(result)
+
+global_variable = 10
+number = 7
+string = "Hello"
+
+funcl(global_variable)
+funcl(number)
+funcl(string)
+
