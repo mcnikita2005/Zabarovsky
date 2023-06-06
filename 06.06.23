@@ -1,0 +1,46 @@
+Задание 2 
+n = int(input("Введите пятизначное число: "))
+
+# Получение последней цифры
+last_digit = n % 10
+
+# Получение предпоследней цифры
+second_last_digit = (n // 10) % 10
+
+print("Последняя цифра:", last_digit)
+print("Предпоследняя цифра:", second_last_digit)
+
+Задание 3
+n = int(input("Введите трехзначное число: "))
+
+# Разбиение числа на цифры
+digit1 = n // 100
+digit2 = (n // 10) % 10
+digit3 = n % 10
+
+# Формирование числа из цифр в обратном порядке
+reversed_number = digit3 * 100 + digit2 * 10 + digit1
+
+# Вычисление разности
+difference = n - reversed_number
+
+print("Разность:", difference)
+
+Задание 4
+n = int(input("Введите целое число: ")) 
+for digit in str(n):
+    print(digit) 
+
+Задание 5
+def contains_digit_two(n):
+    n_str = str(n)
+    
+    if '2' in n_str:
+        return True
+    else:
+        return False
+number = int(input("Введите целое число: "))
+if contains_digit_two(number):
+    print("Цифра 2 входит в число.")
+else:
+    print("Цифра 2 не входит в число.")
