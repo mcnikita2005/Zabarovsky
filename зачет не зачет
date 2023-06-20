@@ -1,0 +1,102 @@
+1. Учитывая строку цифр, вы должны заменить любую цифру ниже 5 на «0», а любую цифру 5 и выше на «1». Верните полученную строку.
+
+def replace_digits(string):
+    result = ''
+    for char in string:
+        if int(char) < 5:
+            result += '0'
+        else:
+            result += '1'
+    return result
+
+input_string = '37291586'
+output_string = replace_digits(input_string)
+print(output_string)
+
+
+2.
+В вашем классе был тест, и вы его прошли. Поздравляем!
+Но вы амбициозный человек. Вы хотите знать, лучше ли вы, чем средний ученик в вашем классе.
+
+Вы получаете массив с результатами тестов ваших сверстников. Теперь посчитайте среднее и сравните свой результат!
+
+Верните True, если вам лучше, иначе False!
+Примечание:
+
+Ваши баллы не включены в массив баллов вашего класса. Для расчета среднего балла вы можете добавить свой балл в данный массив!
+
+def better_than_average(class_points, your_points):
+    total_points = sum(class_points) + your_points
+    average = total_points / (len(class_points) + 1)
+    if your_points > average:
+        return True
+    else:
+        return False
+
+class_scores = [85, 90, 92, 88, 79]
+your_score = 95
+result = better_than_average(class_scores, your_score)
+print(result)
+
+3.
+Герой направляется в замок, чтобы выполнить свою миссию. Однако ему сказали, что замок окружен парочкой могущественных драконов! каждому дракону требуется 2 пули, чтобы быть побежденным, наш герой понятия не имеет, сколько пуль он должен нести.. Предполагая, что он собирается схватить определенное количество пуль и двигаться вперед, чтобы сразиться с другим заданным количеством драконов, выживет ли он?
+
+def hero_will_survive(num_bullets, num_dragons):
+    total_bullets_needed = num_dragons * 2
+
+    if num_bullets >= total_bullets_needed:
+        return True
+    else:
+        return False
+bullets = 10
+dragons = 5
+result = hero_will_survive(bullets, dragons)
+print(result)
+
+4. task:
+
+Given a list of integers, determine whether the sum of its elements is odd or even.
+
+Give your answer as a string matching "odd" or "even".
+
+If the input array is empty consider it as: [0] (array with a zero).
+Examples:
+
+Input: [0]
+Output: "even"
+
+Input: [0, 1, 4]
+Output: "odd"
+
+Input: [0, -1, -5]
+Output: "even"
+
+def sum_odd_or_even(lst):
+    total_sum = sum(lst)
+    if total_sum % 2 == 0:
+        return "even"
+    else:
+        return "odd"
+
+lst1 = [0]
+print(sum_odd_or_even(lst1)) 
+
+lst2 = [0, 1, 4]
+print(sum_odd_or_even(lst2)) 
+
+lst3 = [0, -1, -5]
+print(sum_odd_or_even(lst3)) 
+
+5.
+Create a function that will return a string that combines all of the letters of the three inputed strings in groups. Taking the first letter of all of the inputs and grouping them next to each other. Do this for every letter, see example below!
+
+E.g. Input: "aa", "bb" , "cc" => Output: "abcabc"
+
+Note: You can expect all of the inputs to be the same length.
+
+def combine_strings(s1, s2, s3):
+    result = ""
+    for i in range(len(s1)):
+        result += s1[i] + s2[i] + s3[i]
+    return result
+
