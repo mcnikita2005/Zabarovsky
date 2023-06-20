@@ -1,4 +1,4 @@
-1. Учитывая строку цифр, вы должны заменить любую цифру ниже 5 на «0», а любую цифру 5 и выше на «1». Верните полученную строку.
+8 kuy 1. Учитывая строку цифр, вы должны заменить любую цифру ниже 5 на «0», а любую цифру 5 и выше на «1». Верните полученную строку.
 
 def replace_digits(string):
     result = ''
@@ -99,4 +99,106 @@ def combine_strings(s1, s2, s3):
     for i in range(len(s1)):
         result += s1[i] + s2[i] + s3[i]
     return result
+
+7 kuy. 1 Get the Middle Character
+
+def get_middle(word):
+    length = len(word)
+    middle_index = length // 2
+
+    if length % 2 == 0:
+        return word[middle_index - 1:middle_index + 1]
+    else:
+        return word[middle_index]
+
+2. Waiting room
+
+def last_chair(n, patients):
+    chairs = [0] * n 
+
+    for patient in patients:
+        if patient == 1:
+            chairs[0] = 1  
+        else:
+    
+            optimal_chair = None
+            max_distance = -1
+
+            for i in range(n):
+                if chairs[i] == 0:
+                    distance = min(i, n - i - 1)
+
+                    if distance > max_distance:
+                        optimal_chair = i
+                        max_distance = distance
+
+            chairs[optimal_chair] = patient
+
+    return chairs.index(max(patients)) + 1  
+
+n = 10
+patients = [1, 7, 5, 8, 3, 9, 4, 6, 10, 2]
+last_chair_number = last_chair(n, patients)
+print(last_chair_number)  
+
+3. Regex validate PIN code
+
+def validate_pin(pin):
+    if len(pin) == 4 or len(pin) == 6:
+        if pin.isdigit():
+            return True
+    return False
+
+4.Count up the points for the 7 Wonders board game! Easy version
+
+def calculate_score(compasses, gears, tablets):
+    distinct_sets = min(compasses, gears, tablets)
+    step1_points = distinct_sets * 7
+
+    step2_points = compasses**2 + gears**2 + tablets**2
+
+    total_points = step1_points + step2_points
+
+    return total_points
+
+5. Ones and Zeros
+
+def binary_array_to_number(arr):
+    binary_string = ''.join(str(bit) for bit in arr)
+    decimal_number = int(binary_string, 2)
+    return decimal_number
+
+6 kuy. 1. Tolkien's Book Cart
+from collections import Counter
+
+def find_cheapest_total(books):
+    book_counts = Counter(books)
+    distinct_titles = len(book_counts)
+    total_cost = 0
+
+    while distinct_titles > 0:
+        discount = get_discount(distinct_titles)
+        count = min(book_counts.values())
+        cost = count * 10 * (1 - discount)
+        total_cost += cost
+
+        book_counts = subtract_min_count(book_counts)
+        distinct_titles = len(book_counts)
+
+    return total_cost
+
+def get_discount(distinct_titles):
+    discounts = [0, 0, 0.05, 0.10, 0.20]
+    return discounts[distinct_titles]
+
+def subtract_min_count(book_counts):
+    min_count = min(book_counts.values())
+    for book in book_counts:
+        book_counts[book] -= min_count
+        if book_counts[book] == 0:
+            del book_counts[book]
+    return book_counts
+
+
+
 
